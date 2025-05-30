@@ -1,6 +1,6 @@
 from langchain_community.vectorstores.pgvector import PGVector, DistanceStrategy
 from langchain_google_vertexai import VertexAIEmbeddings
-from langchain_core.messages import HumanMessage, AIMessage, SystemMessage, BaseMessage
+from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 from langgraph.graph import MessagesState, StateGraph, START, END
 from langgraph.prebuilt import ToolNode, tools_condition
 from langgraph.checkpoint.memory import MemorySaver
@@ -9,7 +9,6 @@ import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 import streamlit as st
 import uuid
-from langchain_pinecone import PineconeVectorStore
 from dotenv import load_dotenv
 
 
@@ -157,3 +156,6 @@ if user_input:
     st.session_state.chat_history.append({"role": "assistant", "content": final_response})
     with st.chat_message("assistant"):
         st.markdown(final_response)
+
+
+
