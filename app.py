@@ -9,10 +9,10 @@ import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 import streamlit as st
 import uuid
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 
-load_dotenv()
+# load_dotenv()
 #os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:\\Users\\LucasAlvesRibeiro\\Downloads\\jusec-chatbot-4fca0b96d3eb.json"
 
 #CONNECTION_STRING = "postgresql+psycopg2://postgres:1234@localhost:5432/hemoce"
