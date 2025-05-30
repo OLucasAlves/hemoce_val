@@ -9,8 +9,11 @@ import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 import streamlit as st
 import uuid
+from google.auth import default
 # from dotenv import load_dotenv
 
+# Defina o escopo explicitamente
+scoped_credentials, _ = default(scopes=["https://www.googleapis.com/auth/cloud-platform"])
 
 # load_dotenv()
 #os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:\\Users\\LucasAlvesRibeiro\\Downloads\\jusec-chatbot-4fca0b96d3eb.json"
@@ -21,7 +24,11 @@ COLLECTION_NAME = 'base'
 SCORE_THRESHOLD = 0.6  
 
 # Inicializar o embedding model (o mesmo usado para criar os embeddings no banco)
-model = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.3)
+model = ChatGoogleGenerativeAI(model="gemini-2.0-flash",
+                               temperature=0.3,
+                               credentials=scoped_credentials
+                               )
+                               
 embeddings = VertexAIEmbeddings(model_name="text-multilingual-embedding-002")
 
 db = PGVector(embedding_function=embeddings,
