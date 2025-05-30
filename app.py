@@ -16,7 +16,7 @@ load_dotenv()
 #os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:\\Users\\LucasAlvesRibeiro\\Downloads\\jusec-chatbot-4fca0b96d3eb.json"
 
 #CONNECTION_STRING = "postgresql+psycopg2://postgres:1234@localhost:5432/hemoce"
-CONNECTION_STRING = "postgresql+psycopg2://postgres:ae6XC#zi@34.56.100.85:5432/hemoce"
+CONNECTION_STRING = "postgresql+psycopg2://postgres:ae6XC#zi@10.67.160.3:5432/hemoce"
 COLLECTION_NAME = 'base'
 SCORE_THRESHOLD = 0.6  
 
