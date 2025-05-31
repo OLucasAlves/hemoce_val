@@ -26,9 +26,9 @@ SCORE_THRESHOLD = 0.6
 # Inicializar o embedding model (o mesmo usado para criar os embeddings no banco)
 model = ChatGoogleGenerativeAI(model="gemini-2.0-flash",
                                temperature=0.3,
-                               credentials=scoped_credentials
+                               google_api_key=os.getenv("GOOGLE_API_KEY") 
                                )
-                               
+
 embeddings = VertexAIEmbeddings(model_name="text-multilingual-embedding-002")
 
 db = PGVector(embedding_function=embeddings,
